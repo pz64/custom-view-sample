@@ -19,6 +19,8 @@ public class MyView extends View {
     float circleRadius;
     Paint circlePaint;
 
+    float x,y;
+
     int height;
     int width;
 
@@ -71,13 +73,25 @@ public class MyView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawCircle(width / 2f, height / 2f, circleRadius, circlePaint);
+        canvas.drawCircle(x, y, circleRadius, circlePaint);
+
+        invalidate();
 
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return super.onTouchEvent(event);
+
+        switch (event.getAction())  {
+            case MotionEvent.ACTION_DOWN:
+               x=  event.getX();
+               y = event.getY();
+            break;
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+
+        return true;
     }
 
 

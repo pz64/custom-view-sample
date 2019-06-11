@@ -7,9 +7,9 @@
     tools:context=".MainActivity">
 
     <com.example.customviewtest.myview.MyView
-        app:circleColor="@color/colorPrimary"
+        app:circleColor="@color/colorAccent"
         app:circleRadius="50dp"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>
